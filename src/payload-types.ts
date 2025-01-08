@@ -177,6 +177,7 @@ export interface Page {
     | FormBlock
     | ProseTextBlockType
     | DoingsAccordionBlockType
+    | ToolsSliderBlockType
   )[];
   meta?: {
     title?: string | null;
@@ -795,6 +796,22 @@ export interface Tool {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ToolsSliderBlockType".
+ */
+export interface ToolsSliderBlockType {
+  title?: string | null;
+  tools?:
+    | {
+        tool?: (number | null) | Tool;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'toolsSlider';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects".
  */
 export interface Project {
@@ -1055,6 +1072,7 @@ export interface PagesSelect<T extends boolean = true> {
         formBlock?: T | FormBlockSelect<T>;
         proseText?: T | ProseTextBlockTypeSelect<T>;
         doingsAccordion?: T | DoingsAccordionBlockTypeSelect<T>;
+        toolsSlider?: T | ToolsSliderBlockTypeSelect<T>;
       };
   meta?:
     | T
@@ -1177,6 +1195,21 @@ export interface DoingsAccordionBlockTypeSelect<T extends boolean = true> {
     | T
     | {
         doing?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ToolsSliderBlockType_select".
+ */
+export interface ToolsSliderBlockTypeSelect<T extends boolean = true> {
+  title?: T;
+  tools?:
+    | T
+    | {
+        tool?: T;
         id?: T;
       };
   id?: T;

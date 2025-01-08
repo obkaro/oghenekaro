@@ -5,6 +5,7 @@ import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
+import { resendAdapter } from '@payloadcms/email-resend'
 
 import { Tags } from './collections/Tags'
 import { Media } from './collections/Media'
@@ -79,4 +80,9 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+  email: resendAdapter({
+    defaultFromAddress: 'karo@me.oghenekaro.com',
+    defaultFromName: 'Karo',
+    apiKey: process.env.RESEND_API_KEY || '',
+  }),
 })

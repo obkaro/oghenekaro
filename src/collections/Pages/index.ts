@@ -14,7 +14,7 @@ import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
 import { DoingsAccordion } from '@/blocks/DoingsAccordion/config'
-
+import { ToolsSlider } from '@/blocks/ToolsSlider/config'
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -85,6 +85,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 FormBlock,
                 ProseText,
                 DoingsAccordion,
+                ToolsSlider,
               ],
               required: true,
               admin: {

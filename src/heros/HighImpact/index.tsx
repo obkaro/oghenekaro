@@ -21,7 +21,6 @@ export const HighImpactHero: React.FC<Page['hero']> = ({
   useEffect(() => {
     setHeaderTheme('dark')
   })
-  console.log(links)
 
   // Transform social links to the format expected by SocialIconGroup
   const validSocialLinks: SocialLink[] =
@@ -56,7 +55,7 @@ export const HighImpactHero: React.FC<Page['hero']> = ({
                 {links.map(({ link }, i) => {
                   return (
                     <li key={i}>
-                      <CMSLink {...link} />
+                      <CMSLink {...link} className="rounded-none" size="lg" />
                     </li>
                   )
                 })}

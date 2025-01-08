@@ -10,6 +10,7 @@ import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { ProseTextBlock } from '@/blocks/ProseText/Component'
 import { DoingsAccordionBlock } from '@/blocks/DoingsAccordion/Component'
+import { ToolsSlider } from './ToolsSlider/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -19,6 +20,7 @@ const blockComponents = {
   mediaBlock: MediaBlock,
   proseText: ProseTextBlock,
   doingsAccordion: DoingsAccordionBlock,
+  toolsSlider: ToolsSlider,
 }
 
 export const RenderBlocks: React.FC<{
